@@ -30,6 +30,7 @@
     "watchify": "*"
   },
   "dependencies": {
-    "jquery": "*"
+    "jquery": "*",
+    "material-design-lite": "^1.0.6"
   }
 }
