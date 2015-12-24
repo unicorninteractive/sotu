@@ -1,1 +1,19 @@
 @import "material";
+
+.video-captions p {
+	display: block;
+	width: 100%;
+	font-size: 32px;
+	line-height: 160%;
+	text-align: center;
+}
+
+video::cue {
+	visibility: hidden;
+	background: none;
+	outline: none;
+}
+
+video::-webkit-media-text-track-display {
+	background-color: transparent;
+} 
