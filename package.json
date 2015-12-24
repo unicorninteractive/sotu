@@ -1,0 +1,36 @@
+{
+  "name": "interactive-template",
+  "version": "1.0.0",
+  "license": "MIT",
+  "previewUrl": "http://interactive.fusion.net/interactive-template/",
+  "publishUrl": "gs://interactive.fusion.net/interactive-template/",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fusioneng/interactive-template.git"
+  },
+  "devDependencies": {
+    "browser-sync": "*",
+    "browserify": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-changed": "*",
+    "gulp-filesize": "*",
+    "gulp-imagemin": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-rev-all": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "lodash": "*",
+    "pretty-hrtime": "*",
+    "require-dir": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  },
+  "dependencies": {
+    "jquery": "*"
+  }
+}
