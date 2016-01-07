@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function() {
 $('#questions-embed-button').click(function () {
     modal.showDialog({
         title: 'Action',
-        text: 'This dialog can be closed by pressing ESC or clicking outside of the dialog.<br/>Pressing "YAY" will fire the configured action.',
+        text: 'Embed this',
         negative: {
-            title: 'Nope'
+            title: 'Close'
         },
         positive: {
-            title: 'Yay',
+            title: 'Embed',
             onClick: function (e) {
-                alert('Action performed!');
+                console.log("Embed action goes here");
             }
         }
     });
@@ -38,14 +38,14 @@ $('#questions-embed-button').click(function () {
 $('#questions-share-button').click(function () {
     modal.showDialog({
         title: 'Action',
-        text: 'This dialog can be closed by pressing ESC or clicking outside of the dialog.<br/>Pressing "YAY" will fire the configured action.',
+        text: 'Share this',
         negative: {
-            title: 'Nope'
+            title: 'Close'
         },
         positive: {
-            title: 'Yay',
+            title: 'Share',
             onClick: function (e) {
-                alert('Action performed!');
+                console.log("Share action goes here");
             }
         }
     });
