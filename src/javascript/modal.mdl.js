@@ -44,6 +44,8 @@
                 onLoaded: false
             }, options);
 
+            var that = this;
+
             // remove existing dialogs
             $('.dialog-container').remove();
             $(document).unbind("keyup.dialog");
@@ -51,11 +53,11 @@
             $('<div id="' + options.id + '" class="dialog-container"><div class="mdl-card mdl-shadow--16dp"></div></div>').appendTo("body");
             var dialog = $('#orrsDiag');
             var content = dialog.find('.mdl-card');
-            if (options.contentStyle != null) content.css(options.contentStyle);
-            if (options.title != null) {
+            if (options.contentStyle !== null) content.css(options.contentStyle);
+            if (options.title !== null) {
                 $('<h5>' + options.title + '</h5>').appendTo(content);
             }
-            if (options.text != null) {
+            if (options.text !== null) {
                 $('<p>' + options.text + '</p>').appendTo(content);
             }
             if (options.negative || options.positive) {
@@ -72,7 +74,7 @@
                     negButton.click(function (e) {
                         e.preventDefault();
                         if (!options.negative.onClick(e))
-                            hideDialog(dialog)
+                            that.hideDialog(dialog);
                     });
                     negButton.appendTo(buttonBar);
                 }
@@ -88,7 +90,7 @@
                     posButton.click(function (e) {
                         e.preventDefault();
                         if (!options.positive.onClick(e))
-                            hideDialog(dialog)
+                            that.hideDialog(dialog);
                     });
                     posButton.appendTo(buttonBar);
                 }
@@ -97,11 +99,11 @@
             componentHandler.upgradeDom();
             if (options.cancelable) {
                 dialog.click(function () {
-                    hideDialog(dialog);
+                    that.hideDialog(dialog);
                 });
                 $(document).bind("keyup.dialog", function (e) {
                     if (e.which == 27)
-                        hideDialog(dialog);
+                        that.hideDialog(dialog);
                 });
                 content.click(function (e) {
                     e.stopPropagation();
