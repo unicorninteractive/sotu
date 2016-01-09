@@ -9,9 +9,9 @@
     background: rgba(0, 0, 0, 0.4);
     z-index: 9999;
     opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in;
 }
 
 .dialog-container > div {

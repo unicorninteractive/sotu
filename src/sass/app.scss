@@ -1,22 +1,35 @@
 @import "material";
+@import "modal";
 
+// Question styles
+#chapter-question-list {
+	list-style-type: none;
+	margin-left: 0;
+	transition: background-color 0.2s ease;
+}
+
+#chapter-question-list > li {
+	counter-increment: customlistcounter;
+	line-height: 50px;
+	color: #eeeeee !important;
+}
+
+#chapter-question-list > li:before {
+	content: counter(customlistcounter) " ";
+	font-weight: bold;
+	float: left;
+	width: 3em;
+	opacity: 0.3;
+}
+
+#chapter-question-list:first-child {
+	counter-reset: customlistcounter;
+}
+
+// Video styles
 .video-captions p {
 	display: block;
 	width: 100%;
-	font-size: 32px;
+	font-size: 16px;
 	line-height: 160%;
-	text-align: center;
 }
-
-video::cue {
-	visibility: hidden;
-	background: none;
-	outline: none;
-}
-
-video::-webkit-media-text-track-display {
-	background-color: transparent;
-}
-
-
-@import "modal";

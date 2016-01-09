@@ -1,0 +1,144 @@
+{  
+   "chapters":[  
+      {  
+         "number":0,
+         "title":"Gun Control",
+         "start":5,
+         "end":10,
+         "color": "blue",
+         "questions":[  
+            "What is the point of gun control?",
+            "Why is it important?",
+            "When will it happen?",
+            "Why is it important?",
+            "When will it happen?"
+         ]
+      },
+      {  
+         "number":1,
+         "title":"Women's rights",
+         "start":10,
+         "end":15,
+         "color": "orange",
+         "questions":[  
+            "What does women's rights mean?",
+            "Why do we care about this",
+            "What is Obama going to do?",
+            "Why do we care about this",
+            "What is Obama going to do?"
+         ]
+      },
+      {  
+         "number":2,
+         "title":"Veterans",
+         "start":15,
+         "end":20,
+         "color": "red",
+         "questions":[  
+            "How many veterans are there?",
+            "How much does a veteran earn?",
+            "Why are we still in Afganistan?",
+            "How much does a veteran earn?",
+            "Why are we still in Afganistan?"
+         ]
+      },
+      {  
+         "number":3,
+         "title":"Education",
+         "start":20,
+         "end":25,
+         "color": "yellow",
+         "questions":[  
+            "How many students in the USA?",
+            "Why is higher education so expensive?",
+            "How can I pay my student loan off earlier?",
+            "Why is higher education so expensive?",
+            "How can I pay my student loan off earlier?"
+         ]
+      },
+      {  
+         "number":4,
+         "title":"Healthcare",
+         "start":25,
+         "end":30,
+         "color": "purple",
+         "questions":[  
+            "Was ObamaCare a success?",
+            "Why did it take so long for ObamaCare?",
+            "Will my health insurance get cheaper?",
+            "Why did it take so long for ObamaCare?",
+            "Will my health insurance get cheaper?"
+         ]
+      },
+      {  
+         "number":5,
+         "title":"Afganistan",
+         "start":30,
+         "end":35,
+         "color": "green",
+         "questions":[  
+            "Is the war in Afganistan over?",
+            "What is the cost of the war in Afganistan?",
+            "When is the war over?",
+            "What is the cost of the war in Afganistan?",
+            "When is the war over?"
+         ]
+      },
+      {  
+         "number":6,
+         "title":"Housing",
+         "start":35,
+         "end":40,
+         "color": "pink",
+         "questions":[  
+            "When will the government build more houses?",
+            "What is Section 8 housing?",
+            "Why are rents going up so fast?",
+            "What is Section 8 housing?",
+            "Why are rents going up so fast?"
+         ]
+      },
+      {  
+         "number":7,
+         "title":"Terrorism",
+         "start":40,
+         "end":45,
+         "color": "amber",
+         "questions":[  
+            "What is the White House doing about terrorism?",
+            "How secure are our borders?",
+            "Why is Obama not more pro–active on terrorism?",
+            "How secure are our borders?",
+            "Why is Obama not more pro–active on terrorism?"
+         ]
+      },
+      {  
+         "number":8,
+         "title":"Economy",
+         "start":45,
+         "end":50,
+         "color": "deep-orange",
+         "questions":[  
+            "Why is the stock market flat or declining?",
+            "Why is inflation so low?",
+            "Will the Federal Reserve increase interest rates?",
+            "Why is inflation so low?",
+            "Will the Federal Reserve increase interest rates?"
+         ]
+      },
+      {  
+         "number":9,
+         "title":"Jobs",
+         "start":50,
+         "end":55,
+         "color": "deep-purple",
+         "questions":[  
+            "Why is the minimum wage so low?",
+            "When can we have paid sick leave for everyone?",
+            "What is Obama doing to make more jobs for everyone?",
+            "When can we have paid sick leave for everyone?",
+            "What is Obama doing to make more jobs for everyone?"
+         ]
+      }
+   ]
+}
