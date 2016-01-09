@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     $.each(speech, function(i, x) {
         popcorn.code({
-            start: x.start,
-            end: x.end,
+            start: x.startTime,
+            end: x.endTime,
             onStart: function(options) {
                 $('#text-display').html(x.text);
             }
