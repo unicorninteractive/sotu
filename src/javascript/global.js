@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Video update events
     var popcorn = Popcorn('video');
 
-    for (var x in speech) {
+    $.each(speech, function(i, x) {
         popcorn.code({
-            start: speech[x].start,
-            end: speech[x].end,
+            start: x.start,
+            end: x.end,
             onStart: function(options) {
-                $('#text-display').html(speech[x].text);
+                $('#text-display').html(x.text);
             }
         });
-    }
+    });
 
     var video = document.getElementById('video');
 
@@ -55,36 +55,41 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
+    $('#video-start-button').click(function(e) {
+        e.preventDefault();
+        video.play();
+    });
+
+    $('#questions-embed-button').click(function () {
+        modal.showDialog({
+            title: 'Action',
+            text: 'Embed this',
+            negative: {
+                title: 'Close'
+            },
+            positive: {
+                title: 'Embed',
+                onClick: function (e) {
+                    console.log("Embed action goes here");
+                }
+            }
+        });
+    });
+
+    $('#questions-share-button').click(function () {
+        modal.showDialog({
+            title: 'Action',
+            text: 'Share this',
+            negative: {
+                title: 'Close'
+            },
+            positive: {
+                title: 'Share',
+                onClick: function (e) {
+                    console.log("Share action goes here");
+                }
+            }
+        });
+    });
+
 }, false);
-
-$('#questions-embed-button').click(function () {
-    modal.showDialog({
-        title: 'Action',
-        text: 'Embed this',
-        negative: {
-            title: 'Close'
-        },
-        positive: {
-            title: 'Embed',
-            onClick: function (e) {
-                console.log("Embed action goes here");
-            }
-        }
-    });
-});
-
-$('#questions-share-button').click(function () {
-    modal.showDialog({
-        title: 'Action',
-        text: 'Share this',
-        negative: {
-            title: 'Close'
-        },
-        positive: {
-            title: 'Share',
-            onClick: function (e) {
-                console.log("Share action goes here");
-            }
-        }
-    });
-});

@@ -27,9 +27,17 @@
 }
 
 // Video styles
-.video-captions p {
-	display: block;
-	width: 100%;
-	font-size: 16px;
-	line-height: 160%;
+.video-player {
+
+	.video-captions {
+		margin-top: 40px;
+		padding: 40px 28px;
+	}
+
+	p {
+		display: block;
+		width: 100%;
+		font-size: 16px;
+		line-height: 170%;
+	}
 }
