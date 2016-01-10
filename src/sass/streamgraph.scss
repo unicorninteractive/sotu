@@ -21,4 +21,15 @@
 		stroke-dasharray: 1,4;
 	}
 
+	.remove {
+		position: absolute;
+		z-index: 19;
+		width: 1px;
+		height: 380px;
+		top: 10px;
+		bottom: 30px;
+		left: 0;
+		background: white;
+	}
+
 }

@@ -27,6 +27,22 @@ String.prototype.toHHMMSS = function () {
     return time;
 };
 
+// Debounce function for intensive drawing operations
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     // Subtitle update logic
     // var track = document.getElementById("track1");
@@ -184,6 +200,10 @@ var svg = d3.select(".streamgraph").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var drawStreamGraph = debounce(function() {
+    console.log('draw stream graph');
+}, 500);
+
 var graph = d3.csv("chart.csv", function(data) {
     data.forEach(function(d) {
         d.date = format.parse(d.date);
@@ -217,12 +237,12 @@ var graph = d3.csv("chart.csv", function(data) {
       .call(yAxis.orient("left"));
 
     svg.selectAll(".layer")
-    .attr("opacity", 1)
-    .on("mouseover", function(d, i) {
-      svg.selectAll(".layer").transition()
-      .duration(250)
-      .attr("opacity", function(d, j) {
-        return j != i ? 0.6 : 1;
+        .attr("opacity", 1)
+        .on("mouseover", function(d, i) {
+            svg.selectAll(".layer").transition()
+                .duration(250)
+                .attr("opacity", function(d, j) {
+                return j != i ? 0.6 : 1;
     });})
 
     .on("mousemove", function(d, i) {
@@ -250,42 +270,38 @@ var graph = d3.csv("chart.csv", function(data) {
     })
 
     .on("mouseout", function(d, i) {
-     svg.selectAll(".layer")
-      .transition()
-      .duration(250)
-      .attr("opacity", "1");
+        svg.selectAll(".layer")
+            .transition()
+            .duration(250)
+            .attr("opacity", "1");
+
       d3.select(this)
-      .classed("hover", false)
-      .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "hidden");
+        .classed("hover", false)
+        .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "hidden");
   });
     
   var vertical = d3.select(".chart")
         .append("div")
-        .attr("class", "remove")
-        .style("position", "absolute")
-        .style("z-index", "19")
-        .style("width", "1px")
-        .style("height", "380px")
-        .style("top", "10px")
-        .style("bottom", "30px")
-        .style("left", "0px")
-        .style("background", "#fff");
+        .attr("class", "remove");
 
   d3.select(".chart")
       .on("mousemove", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px" );})
+        mousex = d3.mouse(this);
+        mousex = mousex[0] + 5;
+        vertical.style("left", mousex + "px" );})
+
       .on("mouseover", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px");});
+        mousex = d3.mouse(this);
+        mousex = mousex[0] + 5;
+        vertical.style("left", mousex + "px");});
 
     var timeline = svg.append("g")
-    .append('line')
-    .attr('x1', '0')
-    .attr('x2', width)
-    .attr('y1', '100')
-    .attr('y2', '100')
-    .attr('class', 'timeline');
+        .append('line')
+        .attr('x1', '0')
+        .attr('x2', width)
+        .attr('y1', '100')
+        .attr('y2', '100')
+        .attr('class', 'timeline');
 });
+
+window.addEventListener('resize', drawStreamGraph);
