@@ -2,7 +2,7 @@
    "chapters":[  
       {  
          "number":0,
-         "title":"Gun Control",
+         "title":"Economy",
          "start":5,
          "end":10,
          "color": "blue",
@@ -16,7 +16,7 @@
       },
       {  
          "number":1,
-         "title":"Women's rights",
+         "title":"Terrorism",
          "start":10,
          "end":15,
          "color": "orange",
@@ -30,7 +30,7 @@
       },
       {  
          "number":2,
-         "title":"Veterans",
+         "title":"Healthcare",
          "start":15,
          "end":20,
          "color": "red",
@@ -44,7 +44,7 @@
       },
       {  
          "number":3,
-         "title":"Education",
+         "title":"Sick Leave",
          "start":20,
          "end":25,
          "color": "yellow",
@@ -58,7 +58,21 @@
       },
       {  
          "number":4,
-         "title":"Healthcare",
+         "title":"Education",
+         "start":20,
+         "end":25,
+         "color": "yellow",
+         "questions":[  
+            "How many students in the USA?",
+            "Why is higher education so expensive?",
+            "How can I pay my student loan off earlier?",
+            "Why is higher education so expensive?",
+            "How can I pay my student loan off earlier?"
+         ]
+      },
+      {  
+         "number":5,
+         "title":"Trade",
          "start":25,
          "end":30,
          "color": "purple",
@@ -71,8 +85,8 @@
          ]
       },
       {  
-         "number":5,
-         "title":"Afganistan",
+         "number":6,
+         "title":"Corporate Tax",
          "start":30,
          "end":35,
          "color": "green",
@@ -85,8 +99,8 @@
          ]
       },
       {  
-         "number":6,
-         "title":"Housing",
+         "number":7,
+         "title":"Climate Change",
          "start":35,
          "end":40,
          "color": "pink",
@@ -99,8 +113,8 @@
          ]
       },
       {  
-         "number":7,
-         "title":"Terrorism",
+         "number":8,
+         "title":"Women's Rights",
          "start":40,
          "end":45,
          "color": "amber",
@@ -113,7 +127,7 @@
          ]
       },
       {  
-         "number":8,
+         "number":9,
          "title":"Economy",
          "start":45,
          "end":50,
@@ -124,20 +138,6 @@
             "Will the Federal Reserve increase interest rates?",
             "Why is inflation so low?",
             "Will the Federal Reserve increase interest rates?"
-         ]
-      },
-      {  
-         "number":9,
-         "title":"Jobs",
-         "start":50,
-         "end":55,
-         "color": "deep-purple",
-         "questions":[  
-            "Why is the minimum wage so low?",
-            "When can we have paid sick leave for everyone?",
-            "What is Obama doing to make more jobs for everyone?",
-            "When can we have paid sick leave for everyone?",
-            "What is Obama doing to make more jobs for everyone?"
          ]
       }
    ]

@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     var video = document.getElementById('video');
+    video.textTracks[0].mode = "hidden";
 
     function updateQuestions() {
         $('#chapter-title').html(chapters[currentChapter].title);
@@ -73,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         $('#youtube-watch-link').attr('href', youtubeLink + String(time).toHHMMSS());
+
+        d3.select('.timeline')
+            .attr('transform', 'translate(0, ' + (time * 2) + ')');
     };
 
     var player = videojs('video', { /* Options */ }, function() {
@@ -119,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 // Streamgraph visualization
-colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
+colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0", "#8BC34A"];
 
-strokecolor = colorrange[0];
+strokecolor = "#aaaaaa";
 
 var datearray = [];
 var format = d3.time.format("%m/%d/%y");
@@ -150,7 +154,7 @@ var z = d3.scale.ordinal()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom")
+    .orient("top")
     .ticks(d3.time.weeks);
 
 var yAxis = d3.svg.axis()
@@ -177,42 +181,42 @@ var area = d3.svg.area()
 var svg = d3.select(".streamgraph").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var graph = d3.csv("chart.csv", function(data) {
-  data.forEach(function(d) {
-    d.date = format.parse(d.date);
-    d.value = +d.value;
-  });
+    data.forEach(function(d) {
+        d.date = format.parse(d.date);
+        d.value = +d.value;
+    });
 
-  var layers = stack(nest.entries(data));
+    var layers = stack(nest.entries(data));
 
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
-  svg.selectAll(".layer")
+    svg.selectAll(".layer")
       .data(layers)
     .enter().append("path")
       .attr("class", "layer")
       .attr("d", function(d) { return area(d.values); })
       .style("fill", function(d, i) { return z(i); });
 
-  svg.append("g")
+    svg.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
+      // .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
 
-  svg.append("g")
+    svg.append("g")
       .attr("class", "y axis")
       .attr("transform", "translate(" + width + ", 0)")
       .call(yAxis.orient("right"));
 
-  svg.append("g")
+    svg.append("g")
       .attr("class", "y axis")
       .call(yAxis.orient("left"));
 
-  svg.selectAll(".layer")
+    svg.selectAll(".layer")
     .attr("opacity", 1)
     .on("mouseover", function(d, i) {
       svg.selectAll(".layer").transition()
@@ -224,8 +228,10 @@ var graph = d3.csv("chart.csv", function(data) {
     .on("mousemove", function(d, i) {
       mousex = d3.mouse(this);
       mousex = mousex[0];
+
       var invertedx = x.invert(mousex);
       invertedx = invertedx.getMonth() + invertedx.getDate();
+
       var selected = (d.values);
       for (var k = 0; k < selected.length; k++) {
         datearray[k] = selected[k].date;
@@ -242,6 +248,7 @@ var graph = d3.csv("chart.csv", function(data) {
       tooltip.html( "<p>" + d.key + "<br>" + pro + "</p>" ).style("visibility", "visible");
       
     })
+
     .on("mouseout", function(d, i) {
      svg.selectAll(".layer")
       .transition()
@@ -273,4 +280,12 @@ var graph = d3.csv("chart.csv", function(data) {
          mousex = d3.mouse(this);
          mousex = mousex[0] + 5;
          vertical.style("left", mousex + "px");});
+
+    var timeline = svg.append("g")
+    .append('line')
+    .attr('x1', '0')
+    .attr('x2', width)
+    .attr('y1', '100')
+    .attr('y2', '100')
+    .attr('class', 'timeline');
 });
