@@ -139,9 +139,19 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 // Streamgraph visualization
-colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0", "#8BC34A"];
+colorrange = [
+    "#ffccd1",
+    "#f38eb0",
+    "#cd92d7",
+    "#8fc9f8",
+    "#7fdde9",
+    "#a4d5a6",
+    "#e5ed9b",
+    "#ffdf81",
+    "#ffaa90"
+];
 
-strokecolor = "#aaaaaa";
+strokecolor = "#dddddd";
 
 var datearray = [];
 var format = d3.time.format("%m/%d/%y");
