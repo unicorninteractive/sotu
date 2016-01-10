@@ -27,12 +27,12 @@
     "pretty-hrtime": "*",
     "require-dir": "*",
     "underscore": "^1.8.3",
-    "videojs": "^4.12.15",
     "vinyl-source-stream": "*",
     "watchify": "*"
   },
   "dependencies": {
     "jquery": "*",
-    "material-design-lite": "^1.0.6"
+    "material-design-lite": "^1.0.6",
+    "video.js": "^5.4.6"
   }
 }

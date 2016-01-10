@@ -1,6 +1,7 @@
 var $           = require('jquery');
 var modal       = require('./modal.mdl');
 var popcorn     = require('./popcorn');
+var videojs     = require('video.js');
 // var material = require('material');
 
 // Data sets
@@ -34,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 $('#text-display').html(x.text);
             }
         });
+    });
+
+    var player = videojs('video', { /* Options */ }, function() {
+      console.log('Good to go!');
+     
+      // this.play(); // if you don't trust autoplay for some reason 
     });
 
     var video = document.getElementById('video');
