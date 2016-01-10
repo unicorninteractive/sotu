@@ -1,12 +1,24 @@
 // Streamgraph styles
 
-.chart { 
-  background: #fff;
-}
+.streamgraph { 
+	background: #fff;
 
-.axis path, .axis line {
-  fill: none;
-  stroke: #000;
-  stroke-width: 2px;
-  shape-rendering: crispEdges;
+	path:hover {
+		cursor: pointer;
+	}
+
+	.axis path, .axis line {
+		fill: none;
+		stroke: #000;
+		stroke-width: 2px;
+		shape-rendering: crispEdges;
+	}
+
+	.timeline {
+		stroke: #1194F6;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-dasharray: 1,10;
+	}
+
 }
