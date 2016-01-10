@@ -170,9 +170,9 @@ var nest = d3.nest()
 
 var area = d3.svg.area()
     .interpolate("cardinal")
-    .x(function(d) { return x(d.date); })
-    .y0(function(d) { return y(d.y0); })
-    .y1(function(d) { return y(d.y0 + d.y); });
+    .y(function(d) { return x(d.date); })
+    .x0(function(d) { return y(d.y0); })
+    .x1(function(d) { return y(d.y0 + d.y); });
 
 var svg = d3.select(".streamgraph").append("svg")
     .attr("width", width + margin.left + margin.right)
