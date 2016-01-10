@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 // Streamgraph visualization
-colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
+colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0"];
 
 strokecolor = colorrange[0];
 
