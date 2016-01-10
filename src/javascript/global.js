@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     var video = document.getElementById('video');
+    video.textTracks[0].mode = "hidden";
 
     function updateQuestions() {
         $('#chapter-title').html(chapters[currentChapter].title);
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Streamgraph visualization
 colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0", "#8BC34A"];
 
-strokecolor = colorrange[0];
+strokecolor = "#aaaaaa";
 
 var datearray = [];
 var format = d3.time.format("%m/%d/%y");
