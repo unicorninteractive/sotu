@@ -2,13 +2,30 @@ var $           = require('jquery');
 var modal       = require('./modal.mdl');
 var popcorn     = require('./popcorn');
 var videojs     = require('video.js');
+var d3          = require('d3');
 // var material = require('material');
 
 // Data sets
 var chapters    = require('./chapters.json').chapters;
 var speech      = require('./speech.json').paragraphs;
 
+var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
+
 var currentChapter = 0;
+
+// Helper function for converting time from seconds
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0" + hours;}
+    if (minutes < 10) {minutes = "0" + minutes;}
+    if (seconds < 10) {seconds = "0" + seconds;}
+    var time    = hours + 'h' + minutes + 'm' + seconds + 's';
+    return time;
+};
 
 document.addEventListener("DOMContentLoaded", function() {
     // Subtitle update logic
@@ -37,12 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    var player = videojs('video', { /* Options */ }, function() {
-      console.log('Good to go!');
-     
-      // this.play(); // if you don't trust autoplay for some reason 
-    });
-
     var video = document.getElementById('video');
 
     function updateQuestions() {
@@ -60,7 +71,13 @@ document.addEventListener("DOMContentLoaded", function() {
             currentChapter++;
             updateQuestions();
         }
+
+        $('#youtube-watch-link').attr('href', youtubeLink + String(time).toHHMMSS());
     };
+
+    var player = videojs('video', { /* Options */ }, function() {
+      // this.play(); // if you don't trust autoplay for some reason 
+    });
 
     $('#video-start-button').click(function(e) {
         e.preventDefault();
@@ -100,3 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 }, false);
+
+// Streamgraph visualization
+

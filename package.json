@@ -31,6 +31,7 @@
     "watchify": "*"
   },
   "dependencies": {
+    "d3": "^3.5.12",
     "jquery": "*",
     "material-design-lite": "^1.0.6",
     "video.js": "^5.4.6"
