@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
         $('#youtube-watch-link').attr('href', youtubeLink + String(time).toHHMMSS());
 
         d3.select('.timeline')
-            .attr('transform', 'translate(0, ' + time + ')');
+            .attr('transform', 'translate(0, ' + (time * 2) + ')');
     };
 
     var player = videojs('video', { /* Options */ }, function() {
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 // Streamgraph visualization
-colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0"];
+colorrange = ["#F44336", "#795548", "#FF5722", "#FF9800", "#3F51B5", "#9C27B0", "#8BC34A"];
 
 strokecolor = colorrange[0];
 
