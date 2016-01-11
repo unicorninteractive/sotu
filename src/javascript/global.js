@@ -200,7 +200,7 @@ var streamgraphData;
 var drawStreamGraph = debounce(function() {
 
     width = $(".streamgraph").width() - margin.left - margin.right;
-    height = Math.floor(width * 1.5)  - margin.top - margin.bottom;
+    height = Math.floor(width * 1.3)  - margin.top - margin.bottom;
 
     x = d3.time.scale().range([0, height]);
     y = d3.scale.linear().range([0, width]);
@@ -214,7 +214,6 @@ var drawStreamGraph = debounce(function() {
         .x0(function(d) { return y(d.y0); })
         .x1(function(d) { return y(d.y0 + d.y); });
 
-    console.log(width);
 
     $('.streamgraph-holder').empty();
 
