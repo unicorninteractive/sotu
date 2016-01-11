@@ -259,9 +259,7 @@ var graph = d3.csv("chart.csv", function(data) {
     });
 
     streamgraphData = data;
-
     layers = stack(nest.entries(data));
-
     drawStreamGraph();
 });
 
