@@ -89,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function() {
             updateQuestions();
         }
 
-        $('#youtube-watch-link').attr('href', youtubeLink + String(time).toHHMMSS());
+        $('#youtube-watch-link').click(function() {
+            window.location = youtubeLink + String(time).toHHMMSS();
+        });
 
         d3.select('.timeline')
             .attr('transform', 'translate(0, ' + (time * 2) + ')');
