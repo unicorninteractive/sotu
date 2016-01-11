@@ -95,7 +95,9 @@ document.addEventListener("DOMContentLoaded", function() {
             .attr('transform', 'translate(0, ' + (time * 2) + ')');
     };
 
-    var player = videojs('video', { /* Options */ }, function() {
+    var player = videojs('video', {
+        inactivityTimeout: 0
+    }, function() {
       // this.play(); // if you don't trust autoplay for some reason 
     });
 
@@ -211,7 +213,7 @@ var svg = d3.select(".streamgraph").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var drawStreamGraph = debounce(function() {
-    console.log('draw stream graph');
+    // console.log('draw stream graph');
 }, 500);
 
 var graph = d3.csv("chart.csv", function(data) {
