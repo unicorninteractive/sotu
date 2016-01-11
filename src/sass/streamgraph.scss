@@ -3,14 +3,10 @@
 .streamgraph { 
 	background: #fff;
 
-	path:hover {
-		cursor: pointer;
-	}
-
 	.axis path, .axis line {
 		fill: none;
-		stroke: #000;
-		stroke-width: 2px;
+		stroke: #ddd;
+		stroke-width: 1px;
 		shape-rendering: crispEdges;
 	}
 

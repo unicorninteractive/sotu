@@ -14,7 +14,9 @@
       <header class="demo-header mdl-layout__header mdl-color--blue mdl-color-text--white-600">
         <div class="mdl-layout__header-row">
           <span class="mdl-layout-title">
-            <span class="site-logo"></span>
+            <a href="//google.com/trends">
+              <span class="site-logo"></span>
+            </a>
           </span>
           <span class="mdl-layout-title secondary-title">
             2016 State of the Union
@@ -42,6 +44,19 @@
           </div>
 
           <div class="streamgraph mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--6-col">
+            <div class="mdl-card__title mdl-color-text--grey-600">
+              <h2 class="mdl-card__title-text">
+                Search Interest by Topic
+              </h2>
+              <div class="mdl-layout-spacer"></div>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="qbtn">
+                <i class="material-icons">more_vert</i>
+              </button>
+              <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="qbtn">
+                <li class="mdl-menu__item mdl-color-text--grey-600" id="questions-embed-button"><i class="material-icons">code</i> Embed</li>
+                <li class="mdl-menu__item mdl-color-text--grey-600" id="questions-share-button"><i class="material-icons">share</i> Share</li>
+              </ul>
+            </div>
           </div>
 
           <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet">
