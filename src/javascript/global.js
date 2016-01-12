@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", function() {
         video.play();
     });
 
-    $('#questions-embed-button').click(function () {
+    $('.embed-button').click(function () {
         modal.showDialog({
-            title: 'Action',
+            title: 'Embed',
             text: 'Embed this',
             negative: {
                 title: 'Close'
@@ -128,18 +128,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    $('#questions-share-button').click(function () {
+    $('.share-button').click(function () {
         modal.showDialog({
-            title: 'Action',
-            text: 'Share this',
+            title: 'Share',
+            // text: 'Share this',
             negative: {
                 title: 'Close'
-            },
-            positive: {
-                title: 'Share',
-                onClick: function (e) {
-                    console.log("Share action goes here");
-                }
             }
         });
     });
@@ -176,7 +170,6 @@ var z = d3.scale.ordinal()
     .range(colorrange);
 
 var xAxis;
-
 var yAxis;
 
 var yAxisr = d3.svg.axis()
@@ -200,7 +193,7 @@ var streamgraphData;
 var drawStreamGraph = debounce(function() {
 
     width = $(".streamgraph").width() - margin.left - margin.right;
-    height = Math.floor(width * 1.3)  - margin.top - margin.bottom;
+    height = Math.floor(width)  - margin.top - margin.bottom;
 
     x = d3.time.scale().range([0, height]);
     y = d3.scale.linear().range([0, width]);
