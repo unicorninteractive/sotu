@@ -162,9 +162,9 @@ colorrange = [
 strokecolor = "#dddddd";
 
 var datearray = [];
-var format = d3.time.format("%m/%d/%y");
+var format = d3.time.format("%m/%d %-I:%M %p");
 
-var margin = {top: 20, right: 20, bottom: 20, left: 20};
+var margin = {top: 20, right: 20, bottom: 20, left: 30};
 
 var width;
 var height = 800 - margin.top - margin.bottom;
@@ -205,7 +205,7 @@ var drawStreamGraph = debounce(function() {
     x = d3.time.scale().range([0, height]);
     y = d3.scale.linear().range([0, width]);
 
-    xAxis = d3.svg.axis().scale(x).orient("top").ticks(d3.time.weeks);
+    xAxis = d3.svg.axis().scale(x).orient("top").ticks(d3.time.minutes, 5).tickFormat(d3.time.format("%M"));
     yAxis = d3.svg.axis().scale(y);
 
     area = d3.svg.area()
