@@ -8,6 +8,7 @@
 #chapter-question-list {
 	list-style-type: none;
 	margin-left: 0;
+	margin-bottom: 0;
 	padding-left: 20px;
 	transition: background-color 0.2s ease;
 }
@@ -31,7 +32,7 @@
 }
 
 li .material-icons {
-	padding: 0 6px 3px;
+	padding: 0 6px 3px 0;
 	vertical-align: middle;
 }
 
@@ -135,4 +136,75 @@ li .material-icons {
 		font-size: 16px;
 		line-height: 170%;
 	}
+}
+
+// Embed Cards
+.embed-card {
+	display: flex;
+	flex-direction: column;
+
+	.embed-card-content {
+		flex-grow: 1;
+	}
+}
+
+.embed-dialog-textarea {
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-family: monospace;
+    resize: none;
+	background-color: #eeeeee;
+}
+
+.embed-share-options {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.embed-share-options li {
+	width: 100%;
+	padding: 20px 10px;
+
+	&:hover {
+		background-color: #eee;
+		cursor: pointer;
+	}
+}
+
+#embed-share-facebook::before {
+	display: inline-block;
+	content: "";
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background-image: url('images/facebook.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#embed-share-google::before {
+	display: inline-block;
+	content: "";
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background-image: url('images/googleplus.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#embed-share-twitter::before {
+	display: inline-block;
+	content: "";
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	background-image: url('images/twitter.png');
+	background-size: cover;
+	background-repeat: no-repeat;
 }

@@ -115,15 +115,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.embed-button').click(function () {
         modal.showDialog({
             title: 'Embed',
-            text: 'Embed this',
+            text: 'Paste this into any webpage: <textarea readonly class="embed-dialog-textarea">&lt;iframe src="//googletrends.github.io/2016-state-of-the-union/embed/' + $(this).data('embed') + '.html" scrolling="no" frameBorder="0" width="460" height="460" &gt;&lt;/iframe&gt;</textarea>',
             negative: {
                 title: 'Close'
-            },
-            positive: {
-                title: 'Embed',
-                onClick: function (e) {
-                    console.log("Embed action goes here");
-                }
             }
         });
     });
@@ -131,7 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.share-button').click(function () {
         modal.showDialog({
             title: 'Share',
-            // text: 'Share this',
+            contentStyle: 'max-width: 250px;',
+            text: '<ul class="embed-share-options"><li id="embed-share-facebook">Facebook</li><li id="embed-share-google">Google+</li><li id="embed-share-twitter">Twitter</li></ul>',
             negative: {
                 title: 'Close'
             }
@@ -166,8 +161,7 @@ var height = 800 - margin.top - margin.bottom;
 var x;
 var y;
 
-var z = d3.scale.ordinal()
-    .range(colorrange);
+var z = d3.scale.ordinal().range(colorrange);
 
 var xAxis;
 var yAxis;
@@ -255,4 +249,23 @@ var graph = d3.csv("chart.csv", function(data) {
     drawStreamGraph();
 });
 
-window.addEventListener('resize', drawStreamGraph);
+// window.addEventListener('resize', drawStreamGraph);
+
+// // Draw the map of the states
+// var mapWidth = 960,
+//     mapHeight = 600;
+
+// var projection = d3.geo.albersUsa()
+//     .scale(1280)
+//     .translate([mapWidth / 2, mapHeight / 2]);
+
+// d3.json("usa.json", function(error, usaJson) {
+//     var svg = d3.select("#usa-map").append("svg")
+//         .attr("width", mapWidth)
+//         .attr("height", mapHeight);
+
+//     svg.append("path")
+//         .datum(topojson.mesh(usaJson, usaJson.objects.states, function(a, b) { return a !== b; }))
+//         .attr("class", "states")
+//         .attr("d", path);
+// });
