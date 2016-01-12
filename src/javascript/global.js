@@ -10,6 +10,7 @@ var chapters    = require('./chapters.json').chapters;
 var speech      = require('./speech.json').paragraphs;
 
 var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
+var startingTime = new Date("Sat Jan 20 1900 20:50:00 GMT-0500 (EST)");
 
 var currentChapter = 0;
 
@@ -211,7 +212,13 @@ var drawStreamGraph = debounce(function() {
     x = d3.time.scale().range([0, height]);
     y = d3.scale.linear().range([0, width]);
 
-    xAxis = d3.svg.axis().scale(x).orient("top").ticks(d3.time.minutes, 5).tickFormat(d3.time.format("%M"));
+    var formatMinutes = function(d) {
+        var diffMs = (d - startingTime);
+        var diffMins = Math.round(diffMs / 60000);
+        return diffMins;    
+    };
+
+    xAxis = d3.svg.axis().scale(x).orient("top").ticks(d3.time.minutes, 5).tickFormat(formatMinutes);
     yAxis = d3.svg.axis().scale(y);
 
     area = d3.svg.area()
