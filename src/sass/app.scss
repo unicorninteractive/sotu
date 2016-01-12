@@ -45,6 +45,57 @@
 	text-align: center;
 }
 
+// Legend of the streamgraph
+.streamgraph-legend ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	margin: 0 0 20px;
+	padding: 20px 10px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+	li {
+		width: 25%;
+	}
+
+	li::before {
+		display: inline-block;
+		content: "";
+		height: 10px;
+		width: 10px;
+		margin-right: 5px;
+		border-radius: 5px;
+	}
+
+	.topic-economy::before {
+		background-color: $economy;
+	}
+	.topic-terrorism::before {
+		background-color: $terrorism;
+	}
+	.topic-healthcare::before {
+		background-color: $healthcare;
+	}
+	.topic-sick-leave::before {
+		background-color: $sickLeave;
+	}
+	.topic-education::before {
+		background-color: $education;
+	}
+	.topic-trade::before {
+		background-color: $trade;
+	}
+	.topic-corporate::before {
+		background-color: $corporateTax;
+	}
+	.topic-climate::before {
+		background-color: $climateChange;
+	}
+	.topic-womens::before {
+		background-color: $womensRights;
+	}
+}
+
 // Video styles
 .video-player {
 

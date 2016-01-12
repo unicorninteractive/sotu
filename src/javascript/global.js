@@ -214,7 +214,6 @@ var drawStreamGraph = debounce(function() {
         .x0(function(d) { return y(d.y0); })
         .x1(function(d) { return y(d.y0 + d.y); });
 
-
     $('.streamgraph-holder').empty();
 
     x.domain(d3.extent(streamgraphData, function(d) { return d.date; }));
