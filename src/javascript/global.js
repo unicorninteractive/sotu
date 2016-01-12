@@ -10,7 +10,7 @@ var chapters    = require('./chapters.json').chapters;
 var speech      = require('./speech.json').paragraphs;
 
 var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
-var startingTime = new Date("Sat Jan 20 1900 20:50:00 GMT-0500 (EST)");
+var startingTime = new Date(1421787000000);
 
 var currentChapter = 0;
 
@@ -45,19 +45,6 @@ function debounce(func, wait, immediate) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Subtitle update logic
-    // var track = document.getElementById("track1");
-
-    // track.addEventListener("cuechange", function() {
-    //     var myTrack = this.track;
-    //     var myCues = myTrack.activeCues;
-
-    //     if (myCues.length > 0) {
-    //         var disp = document.getElementById('cueDisplay');
-    //         disp.innerText = myCues[0].text;
-    //     }
-    // }, false);
-
     // Video update events
     var popcorn = Popcorn('video');
 
@@ -95,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         d3.select('.timeline')
-            .attr('transform', 'translate(0, ' + (time * 2) + ')');
+            .attr('transform', 'translate(0, ' + x((time * 1000) + startingTime.getTime()) + ')');
     };
 
     var player = videojs('video', {
@@ -169,9 +156,6 @@ colorrange = [
 ];
 
 strokecolor = "#dddddd";
-
-var datearray = [];
-var format = d3.time.format("%m/%d %-I:%M %p");
 
 var margin = {top: 20, right: 20, bottom: 20, left: 30};
 
@@ -258,15 +242,15 @@ var drawStreamGraph = debounce(function() {
         .append('line')
         .attr('x1', '0')
         .attr('x2', width)
-        .attr('y1', '100')
-        .attr('y2', '100')
+        .attr('y1', '0')
+        .attr('y2', '0')
         .attr('class', 'timeline');
 
 }, 500);
 
 var graph = d3.csv("chart.csv", function(data) {
     data.forEach(function(d) {
-        d.date = format.parse(d.date);
+        d.date = new Date(parseInt(d.date, 10));
         d.value = +d.value;
     });
 
