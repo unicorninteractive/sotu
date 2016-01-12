@@ -129,6 +129,25 @@ document.addEventListener("DOMContentLoaded", function() {
             text: '<ul class="embed-share-options"><li id="embed-share-facebook">Facebook</li><li id="embed-share-google">Google+</li><li id="embed-share-twitter">Twitter</li></ul>',
             negative: {
                 title: 'Close'
+            },
+            onLoaded: function() {
+                $('#embed-share-facebook').click(function(e) {
+                    console.log('share on facebook');
+                });
+                $('#embed-share-google').click(function(e) {
+                    console.log('share on google');
+                });
+                $('#embed-share-twitter').click(function(e) {
+                    e.preventDefault();
+                    var shareText = "Google Trends share text";
+                    var url = "http://googletrends.github.io/2016-state-of-the-union/";
+                    var w = 550;
+                    var h = 300;
+                    var top = (screen.height / 2) - (h / 2);
+                    var left = (screen.width / 2) - (w / 2);
+                    var href = "http://twitter.com/share?text=" + encodeURI(shareText) + "&url=" + encodeURI(url);
+                    window.open(href, "tweet", "height=" + h + ",width=" + w + ",top=" + top + ",left=" + left + ",resizable=1");
+                });
             }
         });
     });
@@ -249,7 +268,7 @@ var graph = d3.csv("chart.csv", function(data) {
     drawStreamGraph();
 });
 
-// window.addEventListener('resize', drawStreamGraph);
+window.addEventListener('resize', drawStreamGraph);
 
 // // Draw the map of the states
 // var mapWidth = 960,
