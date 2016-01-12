@@ -10,9 +10,13 @@
 		shape-rendering: crispEdges;
 	}
 
+	.axis text {
+		fill: #757575;
+	}
+
 	.timeline {
 		stroke: #666;
-		stroke-width: 2;
+		stroke-width: 1;
 		stroke-linecap: round;
 		stroke-dasharray: 1,4;
 		cursor: ns-resize;
