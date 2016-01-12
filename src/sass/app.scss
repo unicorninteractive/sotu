@@ -8,6 +8,7 @@
 #chapter-question-list {
 	list-style-type: none;
 	margin-left: 0;
+	padding-left: 20px;
 	transition: background-color 0.2s ease;
 }
 
@@ -21,7 +22,7 @@
 	content: counter(customlistcounter) " ";
 	font-weight: bold;
 	float: left;
-	width: 3em;
+	width: 2em;
 	opacity: 0.3;
 }
 

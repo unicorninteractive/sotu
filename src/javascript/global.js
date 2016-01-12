@@ -176,7 +176,6 @@ var z = d3.scale.ordinal()
     .range(colorrange);
 
 var xAxis;
-
 var yAxis;
 
 var yAxisr = d3.svg.axis()
