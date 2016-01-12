@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
         video.play();
     });
 
-    $('#questions-embed-button').click(function () {
+    $('.embed-button').click(function () {
         modal.showDialog({
             title: 'Action',
             text: 'Embed this',
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    $('#questions-share-button').click(function () {
+    $('.share-button').click(function () {
         modal.showDialog({
             title: 'Action',
             text: 'Share this',

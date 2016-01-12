@@ -30,6 +30,11 @@
 	counter-reset: customlistcounter;
 }
 
+li .material-icons {
+	padding: 0 6px 3px;
+	vertical-align: middle;
+}
+
 // Site logo
 .site-logo {
 	display: block;
