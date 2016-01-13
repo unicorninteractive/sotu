@@ -3,12 +3,12 @@
     "children": [
         {"name": "Healthcare", "topic": 0,"size": 1783, "color": "#ee524f"},
         {"name": "Immigration", "topic": 1,"size": 1596, "color": "#eb3f79"},
-        {"name": "Gun Control", "topic": 2,"size": 621, "color": "#aa46bb"},
+        {"name": "Gun control", "topic": 2,"size": 621, "color": "#aa46bb"},
         {"name": "", "topic": 3,"size": 111, "color": "#1d87e4"},
         {"name": "", "topic": 4,"size": 45, "color": "#00abc0"},
-        {"name": "Minimum Wage", "topic": 5,"size": 1310, "color": "#429f46"},
+        {"name": "Minimum wage", "topic": 5,"size": 1310, "color": "#429f46"},
         {"name": "Economy", "topic": 6,"size": 1478, "color": "#bfc932"},
         {"name": "Terrorism", "topic": 7,"size": 738, "color": "#ffb200"},
-        {"name": "Climate Change", "topic": 8,"size": 554, "color": "#ff6f42"}
+        {"name": "", "topic": 8,"size": 554, "color": "#ff6f42"}
     ]
 }
