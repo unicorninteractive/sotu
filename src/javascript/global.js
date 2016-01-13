@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
                 $('#embed-share-google').click(function(e) {
                     e.preventDefault();
-                    var shareText = "See how the world searched for #sotu with this @googletrends interactive";
+                    var shareText = "See how the world searched for %23sotu with this @googletrends interactive";
                     var url = "http://googletrends.github.io/2016-state-of-the-union/";
                     var w = 600;
                     var h = 600;
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
                 $('#embed-share-twitter').click(function(e) {
                     e.preventDefault();
-                    var shareText = "See how the world searched for #sotu with this @googletrends interactive";
+                    var shareText = "See how the world searched for %23sotu with this @googletrends interactive";
                     var url = "http://googletrends.github.io/2016-state-of-the-union/";
                     var w = 550;
                     var h = 300;
