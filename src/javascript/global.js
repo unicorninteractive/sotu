@@ -240,7 +240,9 @@ var drawStreamGraph = debounce(function() {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     svg.append('text')
-        .text('Min');
+        .text('Min')
+        .attr('class', 'axis-label')
+        .attr('transform', "rotate(270 3, 10)");
 
     svg.selectAll(".layer")
         .data(layers)
