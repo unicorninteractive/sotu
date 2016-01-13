@@ -10,10 +10,8 @@ var chapters    = require('./chapters.json').chapters;
 var speech      = require('./speech.json').paragraphs;
 var treemap     = require('./treemap.json');
 
-var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
-var startingTime = new Date(1421787000000);
-
-var currentChapter = 0;
+var youtubeLink = "https://www.youtube.com/watch?v=wuI0fP4kc64&t=";
+var startingTime = new Date(1452650760000);
 
 // Helper function for converting time from seconds
 String.prototype.toHHMMSS = function () {
@@ -128,15 +126,25 @@ document.addEventListener("DOMContentLoaded", function() {
             onLoaded: function() {
                 $('#embed-share-facebook').click(function(e) {
                     e.preventDefault();
-                    console.log('share on facebook');
+                    FB.ui({
+                        method: 'share',
+                        href: 'http://googletrends.github.io/unicorninteractive/',
+                    }, function(response){});
                 });
                 $('#embed-share-google').click(function(e) {
                     e.preventDefault();
-                    console.log('share on google');
+                    var shareText = "See the 2016 State of the Union visualization with Google Trends";
+                    var url = "http://googletrends.github.io/2016-state-of-the-union/";
+                    var w = 600;
+                    var h = 600;
+                    var top = (screen.height / 2) - (h / 2);
+                    var left = (screen.width / 2) - (w / 2);
+                    var href = "https://plus.google.com/share?url=" + encodeURI(shareText) + "&url=" + encodeURI(url);
+                    window.open(href, "tweet", "height=" + h + ",width=" + w + ",top=" + top + ",left=" + left + ",resizable=1");
                 });
                 $('#embed-share-twitter').click(function(e) {
                     e.preventDefault();
-                    var shareText = "Google Trends share text";
+                    var shareText = "See the 2016 State of the Union visualization with Google Trends";
                     var url = "http://googletrends.github.io/2016-state-of-the-union/";
                     var w = 550;
                     var h = 300;
@@ -231,12 +239,15 @@ var drawStreamGraph = debounce(function() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    svg.append('text')
+        .text('Min');
+
     svg.selectAll(".layer")
         .data(layers)
         .enter().append("path")
         .attr("class", "layer")
-        .attr("d", function(d) { return area(d.values); })
-        .style("fill", function(d, i) { return z(i); });
+        .attr("d", function(d) {return area(d.values);})
+        .style("fill", function(d, i) {return z(i);});
 
     svg.append("g")
         .attr("class", "x axis")
@@ -277,7 +288,7 @@ var treemapWidth = $('.treemap').width(),
 var tree = d3.layout.treemap()
     .size([treemapWidth, treemapHeight])
     .sticky(true)
-    .value(function(d) { return d.size; });
+    .value(function(d) {return d.size;});
 
 var node = div.datum(treemap).selectAll(".node")
         .data(tree.nodes)
@@ -299,7 +310,6 @@ var node = div.datum(treemap).selectAll(".node")
         });
 
 $('.node').click(function(e) {
-    currentChapter++;
     updateQuestions($(this).data('index'));
 });
 
@@ -312,7 +322,6 @@ function position() {
 
 window.addEventListener('resize', drawStreamGraph);
 updateQuestions(0);
-
 
 var embedCard = window.location.search.slice(1);
 

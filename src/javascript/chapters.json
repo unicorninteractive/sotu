@@ -2,136 +2,106 @@
    "chapters":[  
       {  
          "number":0,
-         "title":"Economy",
-         "start":5,
-         "end":10,
-         "color": "blue",
+         "title":"Healthcare",
          "questions":[  
-            "What is the point of gun control?",
-            "Why is it important?",
-            "When will it happen?",
-            "Why is it important?",
-            "When will it happen?"
+            "What is health care?",
+            "When did the US first consider requiring healthcare?",
+            "How do you know if you have health care?",
+            "When did the affordable care act start?",
+            "How will the IRS know if I have health insurance?"
          ]
       },
       {  
          "number":1,
-         "title":"Terrorism",
-         "start":10,
-         "end":15,
-         "color": "orange",
+         "title":"Immigration",
          "questions":[  
-            "What does women's rights mean?",
-            "Why do we care about this",
-            "What is Obama going to do?",
-            "Why do we care about this",
-            "What is Obama going to do?"
+            "What does ICE stand for in immigration?",
+            "What is the difference between immigration and emigration?",
+            "How much money did immigrants need to come to America?",
+            "What questions are asked in an immigration interview?",
+            "Where do most immigrants to Europe come from?"
          ]
       },
       {  
          "number":2,
-         "title":"Healthcare",
-         "start":15,
-         "end":20,
-         "color": "red",
+         "title":"Gun Control",
          "questions":[  
-            "How many veterans are there?",
-            "How much does a veteran earn?",
-            "Why are we still in Afganistan?",
-            "How much does a veteran earn?",
-            "Why are we still in Afganistan?"
+            "What is gun control?",
+            "What is Obama's gun control policy?",
+            "What is Canada's gun control policy?",
+            "What was Obama's executive action?",
+            "When was gun control first introduced in the USA?"
          ]
       },
       {  
          "number":3,
-         "title":"Sick Leave",
-         "start":20,
-         "end":25,
-         "color": "yellow",
+         "title":"Paid Leave",
          "questions":[  
-            "How many students in the USA?",
-            "Why is higher education so expensive?",
-            "How can I pay my student loan off earlier?",
-            "Why is higher education so expensive?",
-            "How can I pay my student loan off earlier?"
+            "Is it legal to fire someone on medical leave?",
+            "How do I qualify for medical leave pay?",
+            "How many weeks of sick days before you can apply for disability?",
+            "How much do you get paid for California sick leave?",
+            "Do teachers get paid when they are out for medical leave?"
          ]
       },
       {  
          "number":4,
-         "title":"Education",
-         "start":20,
-         "end":25,
-         "color": "yellow",
+         "title":"Gender Equality",
          "questions":[  
-            "How many students in the USA?",
-            "Why is higher education so expensive?",
-            "How can I pay my student loan off earlier?",
-            "Why is higher education so expensive?",
-            "How can I pay my student loan off earlier?"
+            "What percentage of women work?",
+            "What were the issues in the debate over women's equality?",
+            "What are the reasons gender equality is important?",
+            "How many men vs women work?",
+            "What does Obama think about gender equality?"
          ]
       },
       {  
          "number":5,
-         "title":"Trade",
-         "start":25,
-         "end":30,
-         "color": "purple",
+         "title":"Minimum Wage",
          "questions":[  
-            "Was ObamaCare a success?",
-            "Why did it take so long for ObamaCare?",
-            "Will my health insurance get cheaper?",
-            "Why did it take so long for ObamaCare?",
-            "Will my health insurance get cheaper?"
+            "What is the minimum wage?",
+            "Why should we raise the minimum wage?",
+            "When does the minimum wage go up?",
+            "When was the last minimum wage increase?",
+            "Who created the minimum wage?"
          ]
       },
       {  
          "number":6,
-         "title":"Corporate Tax",
-         "start":30,
-         "end":35,
-         "color": "green",
+         "title":"Economy",
          "questions":[  
-            "Is the war in Afganistan over?",
-            "What is the cost of the war in Afganistan?",
-            "When is the war over?",
-            "What is the cost of the war in Afganistan?",
-            "When is the war over?"
+            "What country has the strongest economy?",
+            "Is the US economy strong?",
+            "Is the US economy improving?",
+            "What does the word economy mean?",
+            "Who has the world's largest economy?"
          ]
       },
       {  
          "number":7,
-         "title":"Climate Change",
-         "start":35,
-         "end":40,
-         "color": "pink",
+         "title":"Terrorism",
          "questions":[  
-            "When will the government build more houses?",
-            "What is Section 8 housing?",
-            "Why are rents going up so fast?",
-            "What is Section 8 housing?",
-            "Why are rents going up so fast?"
+            "What is ISIL?",
+            "What causes terrorism?",
+            "What does ISIS stand for?",
+            "Why is terrorism a problem?",
+            "Does Israel have the most terrorist attacks?"
          ]
       },
       {  
          "number":8,
-         "title":"Women's Rights",
-         "start":40,
-         "end":45,
-         "color": "amber",
+         "title":"Climate Change",
          "questions":[  
-            "What is the White House doing about terrorism?",
-            "How secure are our borders?",
-            "Why is Obama not more pro–active on terrorism?",
-            "How secure are our borders?",
-            "Why is Obama not more pro–active on terrorism?"
+            "Is climate change real?",
+            "What is climate change?",
+            "How many scientists believe in climate change?",
+            "Is climate change man made?",
+            "Does Paul Ryan believe in climate change?"
          ]
       },
       {  
          "number":9,
          "title":"Economy",
-         "start":45,
-         "end":50,
-         "color": "deep-orange",
          "questions":[  
             "Why is the stock market flat or declining?",
             "Why is inflation so low?",

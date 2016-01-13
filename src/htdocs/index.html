@@ -20,15 +20,15 @@
           <span class="mdl-layout-title secondary-title">
             2016 State of the Union
           </span>
-          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-layout-title-spacer"></div>
         </div>
       </header>
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid">
           <div class="video-player mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-            <div class="video-wrapper">
+            <div class="video-wrapper mdl-cell--hide-phone">
               <video id="video" class="video-js vjs-default-skin" height="auto" width="auto" controls>
-                <source src="//s3-us-west-2.amazonaws.com/unicorninteractive/sotu.mp4" type="video/mp4">
+                <source src="//s3-us-west-2.amazonaws.com/unicorninteractive/sotu2016.mp4" type="video/mp4">
                 <track id="track1" label="Subtites" src="subtitles.vtt" kind="subtitles" srclang="en">
               </video>
             </div>
@@ -58,16 +58,15 @@
             </div>
             <div class="streamgraph-legend">
               <ul>
+                <li class="topic-healthcare">Healthcare</li>
+                <li class="topic-immigration">Immigration</li>
+                <li class="topic-gun-control">Gun Control</li>
+                <li class="topic-paid-leave">Paid Leave</li>
+                <li class="topic-gender-equality">Gender Equality</li>
+                <li class="topic-minimum-wage">Minimum Wage</li>
                 <li class="topic-economy">Economy</li>
                 <li class="topic-terrorism">Terrorism</li>
-                <li class="topic-healthcare">Healthcare</li>
-                <li class="topic-sick-leave">Sick Leave</li>
-                <li class="topic-education">Education</li>
-                <li class="topic-trade">Trade</li>
-                <li class="topic-corporate">Corporate Tax</li>
-                <li class="topic-climate">Climate Change</li>
-                <li class="topic-womens">Women's Rights</li>
-                <li class="topic-economy">Economy</li>
+                <li class="topic-climate-change">Climate Change</li>
               </ul>
             </div>
             <div class="streamgraph-holder">
@@ -114,7 +113,7 @@
           </div>
         </div>
         <div class="site-footer">
-          <p>This is the footer</p>
+          <p>Built with love by Unicorn Interactive</p>
         </div>
       </main>
     </div>
