@@ -267,6 +267,41 @@ var drawStreamGraph = debounce(function() {
         .attr('y2', '0')
         .attr('class', 'timeline');
 
+    // Draw the treemap responsively
+    $('.treemap div').empty();
+
+    treemapWidth = $('.treemap').width();
+    treemapHeight = $('.treemap').height();
+
+    var tree = d3.layout.treemap()
+        .size([treemapWidth, treemapHeight])
+        .sticky(true)
+        .value(function(d) {return d.size;});
+
+    var node = div.datum(treemap).selectAll(".node")
+            .data(tree.nodes)
+            .enter()
+            .append("div")
+            .attr("class", "node")
+            .attr('data-index', function(d) {
+                return d.topic;
+            })
+            .call(position)
+            .style("background-color", function(d) {
+                return d.name == 'tree' ? '#fff' : d.color;
+            })
+            .append('div')
+            .style("font-size", function(d) {
+                return Math.max(16, 0.1 * Math.sqrt(d.area))+'px'; })
+            .text(function(d) {
+                return d.children ? null : d.name;
+            });
+
+    $('.node').click(function(e) {
+    updateQuestions($(this).data('index'));
+
+});
+
 }, 500);
 
 var graph = d3.csv("chart.csv", function(data) {
@@ -281,38 +316,10 @@ var graph = d3.csv("chart.csv", function(data) {
 });
 
 // Draw the treemap
-var treemapWidth = $('.treemap').width(),
-    treemapHeight = 400,
-    color = d3.scale.category20c(),
-    div = d3.select(".treemap").append("div").style("position", "relative");
+var treemapWidth;
+var treemapHeight;
+var div = d3.select(".treemap").append("div").style("position", "relative");
 
-var tree = d3.layout.treemap()
-    .size([treemapWidth, treemapHeight])
-    .sticky(true)
-    .value(function(d) {return d.size;});
-
-var node = div.datum(treemap).selectAll(".node")
-        .data(tree.nodes)
-        .enter()
-        .append("div")
-        .attr("class", "node")
-        .attr('data-index', function(d) {
-            return d.topic;
-        })
-        .call(position)
-        .style("background-color", function(d) {
-            return d.name == 'tree' ? '#fff' : d.color;
-        })
-        .append('div')
-        .style("font-size", function(d) {
-            return Math.max(16, 0.1 * Math.sqrt(d.area))+'px'; })
-        .text(function(d) {
-            return d.children ? null : d.name;
-        });
-
-$('.node').click(function(e) {
-    updateQuestions($(this).data('index'));
-});
 
 function position() {
   this.style("left", function(d) {return d.x + "px"; })
