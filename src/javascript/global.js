@@ -8,6 +8,7 @@ var d3          = require('d3');
 // Data sets
 var chapters    = require('./chapters.json').chapters;
 var speech      = require('./speech.json').paragraphs;
+var treemap     = require('./treemap.json');
 
 var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
 var startingTime = new Date(1421787000000);
@@ -44,6 +45,15 @@ function debounce(func, wait, immediate) {
     };
 }
 
+function updateQuestions() {
+    $('#chapter-title').html(chapters[currentChapter].title);
+    $('#chapter-question-list').removeClass();
+    $('#chapter-question-list').addClass('mdl-color--' + chapters[currentChapter].color);
+    $('#chapter-question-list li').each(function(i) {
+        $(this).html(chapters[currentChapter].questions[i]);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     // Video update events
     var popcorn = Popcorn('video');
@@ -60,15 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var video = document.getElementById('video');
     video.textTracks[0].mode = "hidden";
-
-    function updateQuestions() {
-        $('#chapter-title').html(chapters[currentChapter].title);
-        $('#chapter-question-list').removeClass();
-        $('#chapter-question-list').addClass('mdl-color--' + chapters[currentChapter].color);
-        $('#chapter-question-list li').each(function(i) {
-            $(this).html(chapters[currentChapter].questions[i]);
-        });
-    }
 
     video.ontimeupdate = function() {
         var time = Math.floor(video.currentTime);
@@ -258,6 +259,45 @@ var graph = d3.csv("chart.csv", function(data) {
     layers = stack(nest.entries(data));
     drawStreamGraph();
 });
+
+// Draw the treemap
+var treemapWidth = $('.treemap').width(),
+    treemapHeight = 300-40,
+    color = d3.scale.category20c(),
+    div = d3.select(".treemap").append("div").style("position", "relative");
+
+var tree = d3.layout.treemap()
+    .size([treemapWidth, treemapHeight])
+    .sticky(true)
+    .value(function(d) { return d.size; });
+
+var node = div.datum(treemap).selectAll(".node")
+        .data(tree.nodes)
+        .enter()
+        .append("div")
+        .attr("class", "node")
+        .call(position)
+        .style("background-color", function(d) {
+            return d.name == 'tree' ? '#fff' : d.color;
+        })
+        .append('div')
+        .style("font-size", function(d) {
+            return Math.max(16, 0.1 * Math.sqrt(d.area))+'px'; })
+        .text(function(d) {
+            return d.children ? null : d.name;
+        })
+
+$('.node').click(function(e) {
+    currentChapter++;
+    updateQuestions();
+});
+
+function position() {
+  this.style("left", function(d) {return d.x + "px"; })
+      .style("top", function(d) { return d.y + "px"; })
+      .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
+      .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
+}
 
 window.addEventListener('resize', drawStreamGraph);
 
