@@ -300,22 +300,3 @@ function position() {
 }
 
 window.addEventListener('resize', drawStreamGraph);
-
-// // Draw the map of the states
-// var mapWidth = 960,
-//     mapHeight = 600;
-
-// var projection = d3.geo.albersUsa()
-//     .scale(1280)
-//     .translate([mapWidth / 2, mapHeight / 2]);
-
-// d3.json("usa.json", function(error, usaJson) {
-//     var svg = d3.select("#usa-map").append("svg")
-//         .attr("width", mapWidth)
-//         .attr("height", mapHeight);
-
-//     svg.append("path")
-//         .datum(topojson.mesh(usaJson, usaJson.objects.states, function(a, b) { return a !== b; }))
-//         .attr("class", "states")
-//         .attr("d", path);
-// });
