@@ -132,18 +132,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
                 $('#embed-share-google').click(function(e) {
                     e.preventDefault();
-                    var shareText = "See the 2016 State of the Union visualization with Google Trends";
+                    var shareText = "See how the world searched for #sotu with this @googletrends interactive";
                     var url = "http://googletrends.github.io/2016-state-of-the-union/";
                     var w = 600;
                     var h = 600;
                     var top = (screen.height / 2) - (h / 2);
                     var left = (screen.width / 2) - (w / 2);
-                    var href = "https://plus.google.com/share?url=" + encodeURI(shareText) + "&url=" + encodeURI(url);
+                    var href = "https://plus.google.com/share?url=" + encodeURI(url);
                     window.open(href, "tweet", "height=" + h + ",width=" + w + ",top=" + top + ",left=" + left + ",resizable=1");
                 });
                 $('#embed-share-twitter').click(function(e) {
                     e.preventDefault();
-                    var shareText = "See the 2016 State of the Union visualization with Google Trends";
+                    var shareText = "See how the world searched for #sotu with this @googletrends interactive";
                     var url = "http://googletrends.github.io/2016-state-of-the-union/";
                     var w = 550;
                     var h = 300;
