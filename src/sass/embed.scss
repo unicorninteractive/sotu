@@ -1,0 +1,81 @@
+// Embed styles
+
+.embed-questions {
+	main {
+		background-color: white !important;
+	}
+
+	.mdl-layout__header {
+		display: none;
+	}
+
+	.site-footer {
+		display: none;
+	}
+
+	.treemap-card {
+		display: none;
+	}
+
+	.streamgraph-card {
+		display: none;
+	}
+
+	.video-player {
+		display: none;
+	}
+}
+
+.embed-treemap {
+	main {
+		background-color: white !important;
+	}
+
+	.mdl-layout__header {
+		display: none;
+	}
+
+	.site-footer {
+		display: none;
+	}
+
+	.question-card {
+		display: none;
+	}
+
+	.streamgraph-card {
+		display: none;
+	}
+
+	.video-player {
+		display: none;
+	}
+}
+
+.embed-streamgraph {
+	main {
+		background-color: white !important;
+	}
+
+	.mdl-layout__header {
+		display: none;
+	}
+
+	.site-footer {
+		display: none;
+	}
+
+	.question-card {
+		display: none;
+	}
+
+	.video-player {
+		display: none;
+	}
+}
+
+.embed-questions, .embed-treemap, .embed-streamgraph {
+	#sbtn, #qbtn, #tbtn {
+		display: none;
+	}
+}

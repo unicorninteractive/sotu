@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.embed-button').click(function () {
         modal.showDialog({
             title: 'Embed',
-            text: 'Paste this into any webpage: <textarea readonly class="embed-dialog-textarea">&lt;iframe src="//googletrends.github.io/2016-state-of-the-union/?' + $(this).data('embed') + '" scrolling="no" frameBorder="0" width="460" height="460" &gt;&lt;/iframe&gt;</textarea>',
+            text: 'Paste this into any webpage: <textarea readonly class="embed-dialog-textarea">&lt;iframe src="//googletrends.github.io/2016-state-of-the-union/?' + $(this).data('embed') + '" scrolling="no" frameBorder="0" width="100%" height="460" &gt;&lt;/iframe&gt;</textarea>',
             negative: {
                 title: 'Close'
             },
@@ -199,7 +199,7 @@ var streamgraphData;
 
 var drawStreamGraph = debounce(function() {
 
-    width = $(".streamgraph").width() - margin.left - margin.right;
+    width = $(".streamgraph-card").width() - margin.left - margin.right;
     height = Math.floor(width)  - margin.top - margin.bottom;
 
     x = d3.time.scale().range([0, height]);
@@ -270,7 +270,7 @@ var graph = d3.csv("chart.csv", function(data) {
 
 // Draw the treemap
 var treemapWidth = $('.treemap').width(),
-    treemapHeight = 300-40,
+    treemapHeight = 400,
     color = d3.scale.category20c(),
     div = d3.select(".treemap").append("div").style("position", "relative");
 
@@ -312,3 +312,26 @@ function position() {
 
 window.addEventListener('resize', drawStreamGraph);
 updateQuestions(0);
+
+
+var embedCard = window.location.search.slice(1);
+
+switch(embedCard) {
+    case "streamgraph":
+        $('body').addClass('embed-streamgraph');
+        $('.streamgraph-card').removeClass('mdl-cell--6-col');
+        $('.streamgraph-card').addClass('mdl-cell--12-col');
+        break;
+    case "questions":
+        $('body').addClass('embed-questions');
+        $('.question-card').removeClass('mdl-cell--6-col');
+        $('.question-card').addClass('mdl-cell--12-col');
+        break;
+    case "treemap":
+        $('body').addClass('embed-treemap');
+        $('.treemap-card').removeClass('mdl-cell--6-col');
+        $('.treemap-card').addClass('mdl-cell--12-col');
+        break;
+    default:
+        break;
+}
