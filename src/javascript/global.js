@@ -45,12 +45,12 @@ function debounce(func, wait, immediate) {
     };
 }
 
-function updateQuestions() {
-    $('#chapter-title').html(chapters[currentChapter].title);
+function updateQuestions(index) {
+    $('#chapter-title').html(chapters[index].title);
     $('#chapter-question-list').removeClass();
-    $('#chapter-question-list').addClass('mdl-color--' + chapters[currentChapter].color);
+    $('#chapter-question-list').addClass('mdl-color--' + chapters[index].color);
     $('#chapter-question-list li').each(function(i) {
-        $(this).html(chapters[currentChapter].questions[i]);
+        $(this).html(chapters[index].questions[i]);
     });
 }
 
@@ -73,10 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     video.ontimeupdate = function() {
         var time = Math.floor(video.currentTime);
-        // if (time > chapters[currentChapter].start) {
-        //     currentChapter++;
-        //     updateQuestions();
-        // }
 
         $('#youtube-watch-link').click(function() {
             window.location = youtubeLink + String(time).toHHMMSS();
@@ -104,9 +100,19 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.embed-button').click(function () {
         modal.showDialog({
             title: 'Embed',
-            text: 'Paste this into any webpage: <textarea readonly class="embed-dialog-textarea">&lt;iframe src="//googletrends.github.io/2016-state-of-the-union/embed/' + $(this).data('embed') + '.html" scrolling="no" frameBorder="0" width="460" height="460" &gt;&lt;/iframe&gt;</textarea>',
+            text: 'Paste this into any webpage: <textarea readonly class="embed-dialog-textarea">&lt;iframe src="//googletrends.github.io/2016-state-of-the-union/?' + $(this).data('embed') + '" scrolling="no" frameBorder="0" width="460" height="460" &gt;&lt;/iframe&gt;</textarea>',
             negative: {
                 title: 'Close'
+            },
+            onLoaded: function() {
+                $(".embed-dialog-textarea").focus(function() {
+                    var $this = $(this);
+                    $(this).select();
+                    $(this).mouseup(function() {
+                        $(this).unbind("mouseup");
+                        return false;
+                    });
+                });
             }
         });
     });
@@ -121,9 +127,11 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             onLoaded: function() {
                 $('#embed-share-facebook').click(function(e) {
+                    e.preventDefault();
                     console.log('share on facebook');
                 });
                 $('#embed-share-google').click(function(e) {
+                    e.preventDefault();
                     console.log('share on google');
                 });
                 $('#embed-share-twitter').click(function(e) {
@@ -158,7 +166,7 @@ colorrange = [
 
 strokecolor = "#dddddd";
 
-var margin = {top: 20, right: 20, bottom: 20, left: 30};
+var margin = {top: 20, right: 20, bottom: 20, left: 50};
 
 var width;
 var height = 800 - margin.top - margin.bottom;
@@ -276,6 +284,9 @@ var node = div.datum(treemap).selectAll(".node")
         .enter()
         .append("div")
         .attr("class", "node")
+        .attr('data-index', function(d) {
+            return d.topic;
+        })
         .call(position)
         .style("background-color", function(d) {
             return d.name == 'tree' ? '#fff' : d.color;
@@ -285,11 +296,11 @@ var node = div.datum(treemap).selectAll(".node")
             return Math.max(16, 0.1 * Math.sqrt(d.area))+'px'; })
         .text(function(d) {
             return d.children ? null : d.name;
-        })
+        });
 
 $('.node').click(function(e) {
     currentChapter++;
-    updateQuestions();
+    updateQuestions($(this).data('index'));
 });
 
 function position() {
@@ -300,3 +311,4 @@ function position() {
 }
 
 window.addEventListener('resize', drawStreamGraph);
+updateQuestions(0);
