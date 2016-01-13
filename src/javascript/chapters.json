@@ -26,7 +26,7 @@
       },
       {  
          "number":2,
-         "title":"Gun Control",
+         "title":"Gun control",
          "color": "#cd92d7",
          "questions":[  
             "What is gun control?",
@@ -38,7 +38,7 @@
       },
       {  
          "number":3,
-         "title":"Paid Leave",
+         "title":"Paid leave",
          "color": "#8fc9f8",
          "questions":[  
             "Is it legal to fire someone on medical leave?",
@@ -50,7 +50,7 @@
       },
       {  
          "number":4,
-         "title":"Gender Equality",
+         "title":"Gender equality",
          "color": "#7fdde9",
          "questions":[  
             "What percentage of women work?",
@@ -62,7 +62,7 @@
       },
       {  
          "number":5,
-         "title":"Minimum Wage",
+         "title":"Minimum wage",
          "color": "#a4d5a6",
          "questions":[  
             "What is the minimum wage?",
@@ -98,7 +98,7 @@
       },
       {  
          "number":8,
-         "title":"Climate Change",
+         "title":"Climate change",
          "color": "#ffaa90",
          "questions":[  
             "Is climate change real?",

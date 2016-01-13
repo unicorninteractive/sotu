@@ -125,10 +125,13 @@ document.addEventListener("DOMContentLoaded", function() {
             onLoaded: function() {
                 $('#embed-share-facebook').click(function(e) {
                     e.preventDefault();
-                    FB.ui({
-                        method: 'share',
-                        href: 'http://googletrends.github.io/unicorninteractive/',
-                    }, function(response){});
+                    var url = "http://googletrends.github.io/2016-state-of-the-union/";
+                    var w = 600;
+                    var h = 400;
+                    var top = (screen.height / 2) - (h / 2);
+                    var left = (screen.width / 2) - (w / 2);
+                    var href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(url);
+                    window.open(href, "tweet", "height=" + h + ",width=" + w + ",top=" + top + ",left=" + left + ",resizable=1");
                 });
                 $('#embed-share-google').click(function(e) {
                     e.preventDefault();
