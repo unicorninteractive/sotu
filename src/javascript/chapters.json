@@ -3,6 +3,7 @@
       {  
          "number":0,
          "title":"Healthcare",
+         "color": "#ffccd1",
          "questions":[  
             "What is health care?",
             "When did the US first consider requiring healthcare?",
@@ -14,6 +15,7 @@
       {  
          "number":1,
          "title":"Immigration",
+         "color": "#f38eb0",
          "questions":[  
             "What does ICE stand for in immigration?",
             "What is the difference between immigration and emigration?",
@@ -25,6 +27,7 @@
       {  
          "number":2,
          "title":"Gun Control",
+         "color": "#cd92d7",
          "questions":[  
             "What is gun control?",
             "What is Obama's gun control policy?",
@@ -36,6 +39,7 @@
       {  
          "number":3,
          "title":"Paid Leave",
+         "color": "#8fc9f8",
          "questions":[  
             "Is it legal to fire someone on medical leave?",
             "How do I qualify for medical leave pay?",
@@ -47,6 +51,7 @@
       {  
          "number":4,
          "title":"Gender Equality",
+         "color": "#7fdde9",
          "questions":[  
             "What percentage of women work?",
             "What were the issues in the debate over women's equality?",
@@ -58,6 +63,7 @@
       {  
          "number":5,
          "title":"Minimum Wage",
+         "color": "#a4d5a6",
          "questions":[  
             "What is the minimum wage?",
             "Why should we raise the minimum wage?",
@@ -69,6 +75,7 @@
       {  
          "number":6,
          "title":"Economy",
+         "color": "#e5ed9b",
          "questions":[  
             "What country has the strongest economy?",
             "Is the US economy strong?",
@@ -80,6 +87,7 @@
       {  
          "number":7,
          "title":"Terrorism",
+         "color": "#ffdf81",
          "questions":[  
             "What is ISIL?",
             "What causes terrorism?",
@@ -91,23 +99,13 @@
       {  
          "number":8,
          "title":"Climate Change",
+         "color": "#ffaa90",
          "questions":[  
             "Is climate change real?",
             "What is climate change?",
             "How many scientists believe in climate change?",
             "Is climate change man made?",
             "Does Paul Ryan believe in climate change?"
-         ]
-      },
-      {  
-         "number":9,
-         "title":"Economy",
-         "questions":[  
-            "Why is the stock market flat or declining?",
-            "Why is inflation so low?",
-            "Will the Federal Reserve increase interest rates?",
-            "Why is inflation so low?",
-            "Will the Federal Reserve increase interest rates?"
          ]
       }
    ]

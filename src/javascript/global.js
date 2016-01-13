@@ -46,7 +46,7 @@ function debounce(func, wait, immediate) {
 function updateQuestions(index) {
     $('#chapter-title').html(chapters[index].title);
     $('#chapter-question-list').removeClass();
-    $('#chapter-question-list').addClass('mdl-color--' + chapters[index].color);
+    $('#chapter-question-list').css('background-color', chapters[index].color);
     $('#chapter-question-list li').each(function(i) {
         $(this).html(chapters[index].questions[i]);
     });
@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     var video = document.getElementById('video');
-    video.textTracks[0].mode = "hidden";
 
     video.ontimeupdate = function() {
         var time = Math.floor(video.currentTime);
