@@ -301,9 +301,9 @@ var drawStreamGraph = debounce(function() {
             });
 
     $('.node').click(function(e) {
-    updateQuestions($(this).data('index'));
-
-});
+        e.preventDefault();
+        updateQuestions($(this).data('index'));
+    });
 
 }, 500);
 
