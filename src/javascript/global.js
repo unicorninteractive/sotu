@@ -13,6 +13,8 @@ var treemap     = require('./treemap.json');
 var youtubeLink = "https://www.youtube.com/watch?v=wuI0fP4kc64&t=";
 var startingTime = new Date(1452650760000);
 
+var currentSpeechSection = -1;
+
 // Helper function for converting time from seconds
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10); // don't forget the second param
@@ -66,6 +68,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    $('.previous-arrow').click(function() {
+        if (currentSpeechSection > 0) {
+            currentSpeechSection--;
+            $('#text-display').html(speech[currentSpeechSection].text);
+        }
+    });
+
+    $('.next-arrow').click(function() {
+        currentSpeechSection++;
+        $('#video-title').hide();
+        $('#text-display').html(speech[currentSpeechSection].text);
+    });
+
     var video = document.getElementById('video');
 
     video.ontimeupdate = function() {
@@ -82,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var player = videojs('video', {
         inactivityTimeout: 0
     }, function() {
+        this.on('play', function() {
+            $('#video-title').hide();
+            $('#text-display').empty();
+        });
       // this.play(); // if you don't trust autoplay for some reason 
     });
 

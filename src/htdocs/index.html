@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>State of the Union 2016 – Google Trends</title>
+  <title>2016 State of the Union – Google Trends</title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="stylesheet" href="app.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta property="og:title" content="2016 State of the Union" />
+  <meta property="og:description" content="See how the world searched for SOTU with this Google Trends interactive" />
 </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -26,13 +28,19 @@
       <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid">
           <div class="video-player mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-            <div class="video-wrapper mdl-cell--hide-phone">
+            <div class="video-wrapper mdl-cell--hide-phone mdl-cell--hide-tablet">
               <video id="video" class="video-js vjs-default-skin" height="auto" width="auto" controls>
                 <source src="//s3-us-west-2.amazonaws.com/unicorninteractive/sotu2016.mp4" type="video/mp4">
               </video>
             </div>
             <div class="mdl-card mdl-card__actions video-captions">
-              <p id="text-display"></p>
+              <span class="previous-arrow mdl-cell--hide-desktop"></span>
+              <h3 id="video-title" style="color: #616161;">State of the Union</h3>
+              <p id="text-display">
+                See what the US searched for on the 2016 State of the Union speech and where it searched with this interactive guide.<br /><br />
+                Roll over the text below and see the data change.
+              </p>
+              <span class="next-arrow mdl-cell--hide-desktop"></span>
             </div>
             <div class="mdl-card--border mdl-card__actions">
               <button id="youtube-watch-link" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">

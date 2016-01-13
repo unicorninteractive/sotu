@@ -39,11 +39,28 @@ li .material-icons {
 	vertical-align: middle;
 }
 
+.previous-arrow {
+	background-image: url('images/arrow-up.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;	
+}
+
+.next-arrow {
+	background-image: url('images/arrow-down.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.next-arrow, .previous-arrow {
+	height: 20px;
+	cursor: pointer;
+}
+
 // Site logo
 .site-logo {
 	display: block;
-	width: 140px;
-	height: 40px;
+	width: 80px;
+	height: 30px;
 	background-image: url('images/googletrendslogo.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -52,6 +69,7 @@ li .material-icons {
 
 .mdl-layout__header-row {
 	justify-content: space-between;
+	padding: 0 16px 0 16px;
 }
 
 .mdl-layout-title-spacer {
@@ -66,6 +84,7 @@ li .material-icons {
 
 .secondary-title {
 	width: 50%;
+	font-size: 14px;
 	text-align: center;
 }
 
@@ -146,11 +165,15 @@ li .material-icons {
 	.video-captions {
 		padding: 40px 28px;
 		flex-grow: 1;
+		min-height: 400px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	p {
 		display: block;
 		width: 100%;
+		flex-grow: 1;
 		font-size: 16px;
 		line-height: 170%;
 		color:#757575;
