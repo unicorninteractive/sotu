@@ -11,9 +11,7 @@ var speech      = require('./speech.json').paragraphs;
 var treemap     = require('./treemap.json');
 
 var youtubeLink = "http://m.youtube.com/watch?v=UPFT4xlNE5g&t=";
-var startingTime = new Date(1421787000000);
-
-var currentChapter = 0;
+var startingTime = new Date(1452650760000);
 
 // Helper function for converting time from seconds
 String.prototype.toHHMMSS = function () {
@@ -299,7 +297,6 @@ var node = div.datum(treemap).selectAll(".node")
         });
 
 $('.node').click(function(e) {
-    currentChapter++;
     updateQuestions($(this).data('index'));
 });
 

@@ -71,7 +71,7 @@ li .material-icons {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 
 	li {
-		width: 25%;
+		width: 30%;
 		// font-size: 10px;
 		font-weight: 200;
 		color: #757575;
@@ -86,32 +86,32 @@ li .material-icons {
 		border-radius: 5px;
 	}
 
+	.topic-healthcare::before {
+		background-color: $healthcare;
+	}
+	.topic-immigration::before {
+		background-color: $immigration;
+	}
+	.topic-gun-control::before {
+		background-color: $gunControl;
+	}
+	.topic-paid-leave::before {
+		background-color: $paidLeave;
+	}
+	.topic-gender-equality::before {
+		background-color: $genderEquality;
+	}
+	.topic-minimum-wage::before {
+		background-color: $minimumWage;
+	}
 	.topic-economy::before {
 		background-color: $economy;
 	}
 	.topic-terrorism::before {
 		background-color: $terrorism;
 	}
-	.topic-healthcare::before {
-		background-color: $healthcare;
-	}
-	.topic-sick-leave::before {
-		background-color: $sickLeave;
-	}
-	.topic-education::before {
-		background-color: $education;
-	}
-	.topic-trade::before {
-		background-color: $trade;
-	}
-	.topic-corporate::before {
-		background-color: $corporateTax;
-	}
-	.topic-climate::before {
+	.topic-climate-change::before {
 		background-color: $climateChange;
-	}
-	.topic-womens::before {
-		background-color: $womensRights;
 	}
 }
 
