@@ -3,7 +3,7 @@
       {  
          "number":0,
          "title":"Healthcare",
-         "color": "#e47272",
+         "color": "#ee524f",
          "questions":[  
             "What is health care?",
             "When did the US first consider requiring healthcare?",
@@ -27,7 +27,7 @@
       {  
          "number":2,
          "title":"Gun control",
-         "color": "#cd92d7",
+         "color": "#aa46bb",
          "questions":[  
             "What is gun control?",
             "What is Obama's gun control policy?",
@@ -39,7 +39,7 @@
       {  
          "number":3,
          "title":"Paid leave",
-         "color": "#8fc9f8",
+         "color": "#1d87e4",
          "questions":[  
             "Is it legal to fire someone on medical leave?",
             "How do I qualify for medical leave pay?",
@@ -51,7 +51,7 @@
       {  
          "number":4,
          "title":"Gender equality",
-         "color": "#7fdde9",
+         "color": "#00abc0",
          "questions":[  
             "What percentage of women work?",
             "What were the issues in the debate over women's equality?",
@@ -63,7 +63,7 @@
       {  
          "number":5,
          "title":"Minimum wage",
-         "color": "#a4d5a6",
+         "color": "#429f46",
          "questions":[  
             "What is the minimum wage?",
             "Why should we raise the minimum wage?",
@@ -75,7 +75,7 @@
       {  
          "number":6,
          "title":"Economy",
-         "color": "#e5ed9b",
+         "color": "#bfc932",
          "questions":[  
             "What country has the strongest economy?",
             "Is the US economy strong?",
@@ -87,7 +87,7 @@
       {  
          "number":7,
          "title":"Terrorism",
-         "color": "#ffdf81",
+         "color": "#ffb200",
          "questions":[  
             "What is ISIL?",
             "What causes terrorism?",
@@ -99,7 +99,7 @@
       {  
          "number":8,
          "title":"Climate change",
-         "color": "#ffaa90",
+         "color": "#ff6f42",
          "questions":[  
             "Is climate change real?",
             "What is climate change?",
