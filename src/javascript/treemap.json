@@ -1,14 +1,14 @@
 {
     "name": "tree",
     "children": [
-        {"name": "Economy", "topic": 0,"size": 16000, "color": "#ffccd1"},
-        {"name": "Terrorism", "topic": 1,"size": 8000, "color": "#f38eb0"},
-        {"name": "Health Care", "topic": 2,"size": 5220, "color": "#cd92d7"},
-        {"name": "Sick Leave", "topic": 3,"size": 3623, "color": "#8fc9f8"},
-        {"name": "Education", "topic": 4,"size": 984, "color": "#7fdde9"},
-        {"name": "Trade", "topic": 5,"size": 6410, "color": "#a4d5a6"},
-        {"name": "Corporate Tax", "topic": 6,"size": 2124, "color": "#e5ed9b"},
-        {"name": "Climate Change", "topic": 7,"size": 3000, "color": "#ffdf81"},
-        {"name": "Women's Rights", "topic": 8,"size": 1500, "color": "#ffaa90"}
+        {"name": "Healthcare", "topic": 0,"size": 1783, "color": "#ffccd1"},
+        {"name": "Immigration", "topic": 1,"size": 1596, "color": "#f38eb0"},
+        {"name": "Gun Control", "topic": 2,"size": 621, "color": "#cd92d7"},
+        {"name": "Paid Leave", "topic": 3,"size": 111, "color": "#8fc9f8"},
+        {"name": "Gender Equality", "topic": 4,"size": 45, "color": "#7fdde9"},
+        {"name": "Minimum Wage", "topic": 5,"size": 1310, "color": "#a4d5a6"},
+        {"name": "Economy", "topic": 6,"size": 1478, "color": "#e5ed9b"},
+        {"name": "Terrorism", "topic": 7,"size": 738, "color": "#ffdf81"},
+        {"name": "Climate Change", "topic": 8,"size": 554, "color": "#ffaa90"}
     ]
 };
